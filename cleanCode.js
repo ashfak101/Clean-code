@@ -78,3 +78,23 @@ const zipCode = address.zipCode;
 
 // clean way
 const { street, city, state, zipCode } = address;
+
+// Object & Guard Clauses --------------------------------------------------------------
+const sendEmail = (to, subject, body) => {
+  if (to) {
+    // send email
+  } else {
+    return "Please Enter A Recipient";
+  }
+};
+//  cleaner way
+const sendEmail = ({ to, subject, body }) => {
+  if (to) return "Please Enter A Recipient";
+  // send email
+};
+
+sendEmail({
+  to: "This is terrible",
+  subject: "This is also terrible",
+  body: "This is also terrible",
+});
